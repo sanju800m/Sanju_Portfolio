@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 <script>
 (function(){var r=document.documentElement,e=false;try{e=sessionStorage.getItem('entered')==='1'}catch(x){}r.classList.add('js');if(e)r.classList.add('entered');else r.classList.add('locked');
 try{r.dataset.theme=localStorage.getItem('theme')||'light'}catch(e){r.dataset.theme='light'}})();
@@ -39,14 +39,12 @@ try{r.dataset.theme=localStorage.getItem('theme')||'light'}catch(e){r.dataset.th
 <header class="nav">
   <a class="brand" href="#home"><img class="brand-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkQnTZ54AQuuNlgzufJcS46Xq5s55fQnoP4nIdwk2byw&s=1010" alt="">Sanjay<span>.</span></a>
   <nav>
-    <a href="#home">Home</a>
+    <!-- <a href="#home">Home</a> -->
     <a href="#about">About</a>
-    <a href="#expertise">Expertise</a>
-    <a href="#skills">Skills</a>
+    <a href="#expertise">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#certifications">Certifications</a>
+    <a href="#certifications">Achievements</a>
     <button class="theme" id="theme" type="button" aria-label="Switch to dark mode">
       <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -123,52 +121,69 @@ try{r.dataset.theme=localStorage.getItem('theme')||'light'}catch(e){r.dataset.th
   </div>
 </section>
 
-<!-- EXPERTISE -->
+<!-- SKILLS AND EXPERTISE -->
 <section id="expertise" class="wrap">
-  <div class="head reveal"><h2>Expertise built for production</h2><p>Patterns I use to ship Salesforce code that is secure, bulk-safe and easy to change.</p></div>
+  <div class="head reveal"><h2>Skills and expertise</h2><p>Platform skills and production patterns, grouped by the work they support.</p></div>
   <div class="tabs reveal" role="group" aria-label="Filter expertise">
     <button type="button" class="tab on" data-f="all" aria-pressed="true">All</button>
+    <button type="button" class="tab" data-f="admin" aria-pressed="false">Admin</button>
     <button type="button" class="tab" data-f="apex" aria-pressed="false">Apex</button>
-    <button type="button" class="tab" data-f="lwc" aria-pressed="false">Lightning Web Components</button>
+    <button type="button" class="tab" data-f="lwc" aria-pressed="false">LWC</button>
     <button type="button" class="tab" data-f="int" aria-pressed="false">Integration</button>
-    <button type="button" class="tab" data-f="auto" aria-pressed="false">Automation and Data</button>
-    <button type="button" class="tab" data-f="ops" aria-pressed="false">DevOps</button>
-    <button type="button" class="tab" data-f="ai" aria-pressed="false">AI</button>
+    <button type="button" class="tab" data-f="agentforce" aria-pressed="false">Agentforce</button>
+    <button type="button" class="tab" data-f="deployment" aria-pressed="false">Deployment</button>
+    <button type="button" class="tab" data-f="tools" aria-pressed="false">Tools</button>
   </div>
   <div class="items">
-    <article class="item reveal" data-c="apex"><h3>Trigger framework</h3><p>One trigger per object, handler and domain layers, recursion guards and a custom-metadata bypass for data loads.</p></article>
-    <article class="item reveal" data-c="apex"><h3>Enterprise patterns</h3><p>fflib-style Service, Selector and Unit of Work layers so DML is batched and logic is unit-testable.</p></article>
-    <article class="item reveal" data-c="apex"><h3>Async at scale</h3><p>Queueable chains with Transaction Finalizers, Batch with Database.Stateful and Schedulable orchestration.</p></article>
-    <article class="item reveal" data-c="apex"><h3>Secure by default</h3><p>WITH USER_MODE queries, Security.stripInaccessible, with sharing classes and no secrets in code.</p></article>
-    <article class="item reveal" data-c="lwc"><h3>Composable UI</h3><p>Small single-purpose components that talk through Lightning Message Service instead of tight parent-child coupling.</p></article>
-    <article class="item reveal" data-c="lwc"><h3>Efficient data layer</h3><p>Lightning Data Service, the GraphQL wire adapter, cacheable Apex and refreshApex to avoid redundant server calls.</p></article>
-    <article class="item reveal" data-c="lwc"><h3>Performance</h3><p>Conditional rendering with lwc:if, debounced search, lazy-loaded panels and minimal reactive state.</p></article>
-    <article class="item reveal" data-c="lwc"><h3>Quality and access</h3><p>Jest unit tests, keyboard-accessible markup and Lightning Web Security compatibility.</p></article>
-    <article class="item reveal" data-c="int"><h3>Secure outbound calls</h3><p>Named and External Credentials with OAuth 2.0 JWT bearer flow, timeouts and exponential backoff.</p></article>
-    <article class="item reveal" data-c="int"><h3>Event-driven design</h3><p>Platform Events, Change Data Capture and the Pub/Sub API for decoupled, replayable messaging.</p></article>
-    <article class="item reveal" data-c="int"><h3>Reliability</h3><p>Idempotency keys, correlation IDs and a dead-letter object with one-click replay so no message is lost.</p></article>
-    <article class="item reveal" data-c="int"><h3>Inbound and virtual data</h3><p>Custom REST resources, External Services and Salesforce Connect for live external records.</p></article>
-    <article class="item reveal" data-c="auto"><h3>Flow engineering</h3><p>Record-triggered and screen Flows with fault paths, subflows and a clear Flow-versus-Apex decision rule.</p></article>
-    <article class="item reveal" data-c="auto"><h3>Large data volumes</h3><p>Selective SOQL, Query Plan analysis, indexed filters and Bulk API 2.0 for migrations.</p></article>
-    <article class="item reveal" data-c="auto"><h3>Configurable platform design</h3><p>Custom metadata driven rules so admins change behavior without a deployment.</p></article>
-    <article class="item reveal" data-c="ops"><h3>Source-driven delivery</h3><p>SFDX projects, scratch orgs, unlocked packages and a disciplined Git branching model.</p></article>
-    <article class="item reveal" data-c="ops"><h3>CI/CD quality gates</h3><p>GitHub Actions pipelines with delta deployments, PMD and ESLint checks and Jest on every pull request.</p></article>
-    <article class="item reveal" data-c="ops"><h3>Observability</h3><p>Structured logging to a custom object, post-deploy smoke tests and a clear debugging strategy.</p></article>
-    <article class="item reveal" data-c="ai"><h3>Agentforce service workflows</h3><p>Shape focused service-agent topics, instructions, actions, and escalation paths around a defined support workflow.</p></article>
-    <article class="item reveal" data-c="ai"><h3>Knowledge-grounded responses</h3><p>Use approved Salesforce Knowledge as context for case summaries and suggested replies, with source visibility for the agent.</p></article>
-    <article class="item reveal" data-c="ai"><h3>Responsible AI guardrails</h3><p>Keep permissions, clear limits, human review, and safe handoff paths central to AI-assisted service.</p></article>
-  </div>
-</section>
+    <article class="item reveal" data-c="admin"><h3>Data security</h3><p>Model access with permission sets, role hierarchy, sharing rules, and field-level security; validate effective access with least-privilege user scenarios.</p></article>
+    <article class="item reveal" data-c="admin"><h3>Validations</h3><p>Use cross-field and record-state formulas to prevent invalid transitions, while accounting for imports, integrations, and legitimate bypass paths.</p></article>
+    <article class="item reveal" data-c="admin"><h3>Approval processes</h3><p>Route records by risk and ownership, define entry criteria and delegated approvers, and make rejection and recall outcomes auditable.</p></article>
+    <article class="item reveal" data-c="admin"><h3>Flow automation</h3><p>Build record-triggered and screen Flows with entry criteria, reusable subflows, fault connectors, and a clear Flow-versus-Apex boundary.</p></article>
+    <article class="item reveal" data-c="admin"><h3>Data management</h3><p>Plan imports and updates around external IDs, duplicate rules, ownership, validation, reconciliation, and a practical rollback strategy.</p></article>
+    <article class="item reveal" data-c="admin"><h3>User management</h3><p>Provision users with role, license, profile, and permission-set assignments that follow least privilege and remain maintainable at scale.</p></article>
+    <article class="item reveal" data-c="admin"><h3>Configurable platform rules</h3><p>Move changeable business values into Custom Metadata so admins can adjust behavior without code edits or repeated deployments.</p></article>
 
-<!-- SKILLS -->
-<section id="skills" class="wrap">
-  <div class="head reveal"><h2>Salesforce skills</h2><p>The platform capabilities and tools I bring to delivery.</p></div>
-  <div class="skills">
-    <article class="skill reveal"><h3>Salesforce Core</h3><ul class="chips"><li class="adv">Apex</li><li class="adv">Trigger frameworks</li><li>SOQL / SOSL</li><li>Batch Apex</li><li>Queueable Apex</li><li>Record-triggered Flows</li><li>FLS and sharing</li><li>Custom Metadata</li></ul></article>
-    <article class="skill reveal"><h3>Integration</h3><ul class="chips"><li>REST / SOAP APIs</li><li>Named Credentials</li><li>OAuth 2.0</li><li>Platform Events</li><li>Change Data Capture</li><li>Idempotent retries</li></ul></article>
-    <article class="skill reveal"><h3>Agentforce and AI</h3><ul class="chips"><li class="adv">Agentforce</li><li class="adv">Prompt Builder</li><li>Salesforce Knowledge</li><li>Grounded responses</li><li>Human-reviewed actions</li><li>Responsible AI</li></ul></article>
-    <article class="skill reveal"><h3>UI and Quality</h3><ul class="chips"><li class="adv">Lightning Web Components</li><li>Lightning Data Service</li><li>Lightning Message Service</li><li>GraphQL Wire Adapter</li><li>SLDS</li><li>JavaScript</li><li>Jest</li><li>Accessibility</li><li>HTML / CSS</li></ul></article>
-    <article class="skill reveal"><h3>Delivery and Data</h3><ul class="chips"><li>Salesforce CLI / SFDX</li><li>Git and GitHub</li><li>GitHub Actions</li><li>PMD / ESLint</li><li>Bulk API 2.0</li><li>Query Plan / Indexes</li><li>Permission Sets</li><li>Data Loader</li><li>SQL</li></ul></article>
+    <article class="item reveal" data-c="apex"><h3>Trigger framework</h3><p>One trigger per object with handler and domain layers, bulk-safe entry points, recursion guards, and metadata-controlled bypasses for trusted data loads.</p></article>
+    <article class="item reveal" data-c="apex"><h3>Enterprise patterns</h3><p>Use Service, Selector, and Unit of Work layers to isolate business logic, centralize queries, batch DML, and keep behavior straightforward to unit test.</p></article>
+    <article class="item reveal" data-c="apex"><h3>Batch Apex</h3><p>Use QueryLocator for large datasets, tune scope size for transaction cost, and persist cross-scope state only when Database.Stateful is needed.</p></article>
+    <article class="item reveal" data-c="apex"><h3>Schedulable Apex</h3><p>Use CRON-driven jobs to start bounded work, hand large workloads to Batch Apex, and guard scheduled operations against duplicate execution.</p></article>
+    <article class="item reveal" data-c="apex"><h3>Queueable Apex</h3><p>Pass serializable work inputs, chain jobs deliberately, and use Transaction Finalizers for outcome handling and controlled retries.</p></article>
+    <article class="item reveal" data-c="apex"><h3>Future methods</h3><p>Reserve @future for simple legacy-compatible asynchronous work; prefer Queueable when jobs need complex inputs, chaining, or monitoring.</p></article>
+    <article class="item reveal" data-c="apex"><h3>Apex sharing</h3><p>Choose with sharing, inherited sharing, or without sharing intentionally, and keep caller access expectations explicit across service layers.</p></article>
+    <article class="item reveal" data-c="apex"><h3>Apex security</h3><p>Enforce CRUD and field access with USER_MODE and Security.stripInaccessible, and avoid leaking protected values through errors or logs.</p></article>
+    <article class="item reveal" data-c="apex"><h3>SOQL and SOSL design</h3><p>Keep queries selective and outside loops, inspect Query Plans for large objects, bind user input, and choose SOSL when matching across objects.</p></article>
+    <article class="item reveal" data-c="apex"><h3>Production-grade testing</h3><p>Cover positive, negative, permission, and callout paths; run 200-record trigger tests and assert governor-limit behavior to catch regressions early.</p></article>
+
+    <article class="item reveal" data-c="lwc"><h3>Component communication</h3><p>Use public properties and events for parent-child flows, and choose a message channel when components are separated in the page hierarchy.</p></article>
+    <article class="item reveal" data-c="lwc"><h3>Lightning Message Service</h3><p>Publish and subscribe across components and supported page technologies, with scoped channels and explicit subscription cleanup.</p></article>
+    <article class="item reveal" data-c="lwc"><h3>Wire service</h3><p>Use reactive wire adapters for read-oriented data and handle loading and errors. Refresh Apex wire results with refreshApex; use adapter-specific mechanisms for LDS and GraphQL.</p></article>
+    <article class="item reveal" data-c="lwc"><h3>Lightning Data Service</h3><p>Use record adapters and base components to share cached data, respect user permissions, and avoid custom Apex for standard record operations.</p></article>
+    <article class="item reveal" data-c="lwc"><h3>GraphQL data access</h3><p>Retrieve related records with a focused selection set, reducing round trips while keeping fields and access aligned to the UI.</p></article>
+    <article class="item reveal" data-c="lwc"><h3>Responsive performance</h3><p>Use conditional rendering, debounced search, lazy-loaded panels, and minimal reactive state to keep record pages fast and predictable.</p></article>
+    <article class="item reveal" data-c="lwc"><h3>Quality and accessibility</h3><p>Build with SLDS and semantic keyboard-accessible markup, then validate behavior with Jest and Lightning Web Security-compatible patterns.</p></article>
+
+    <article class="item reveal" data-c="int"><h3>OAuth authentication</h3><p>Use Named and External Credentials with OAuth 2.0 flows, scoped principals, protected secrets, and explicit timeout handling.</p></article>
+    <article class="item reveal" data-c="int"><h3>Apex REST API development</h3><p>Expose focused resources with @RestResource and supported HTTP verbs; validate inputs, enforce caller access, and return deliberate status codes.</p></article>
+    <article class="item reveal" data-c="int"><h3>JSON serialization and deserialization</h3><p>Map payloads to typed DTOs, handle nulls and unexpected fields intentionally, and serialize only the contract fields external clients need.</p></article>
+    <article class="item reveal" data-c="int"><h3>API contracts and versioning</h3><p>Validate required fields and business rules at the boundary, preserve backward compatibility, and evolve payload schemas deliberately.</p></article>
+    <article class="item reveal" data-c="int"><h3>Event-driven architecture</h3><p>Use Platform Events, Change Data Capture, and Pub/Sub API for decoupled delivery, replay-aware consumers, and controlled fan-out.</p></article>
+    <article class="item reveal" data-c="int"><h3>Sync and async patterns</h3><p>Use REST or SOAP request-response when callers need an immediate result; move slow or bursty work to Queueable jobs and event-based processing.</p></article>
+    <article class="item reveal" data-c="int"><h3>Bulk APIs and pagination</h3><p>Handle large transfers with Bulk API 2.0, paginate REST results using server-provided cursors, and design consumers to resume safely.</p></article>
+    <article class="item reveal" data-c="int"><h3>Reliability and replay</h3><p>Make operations idempotent with correlation IDs, bounded retries that respect rate limits, dead-letter storage, and support-friendly replay controls.</p></article>
+
+    <article class="item reveal" data-c="agentforce"><h3>Agentforce service workflows</h3><p>Shape focused topics, instructions, actions, and escalation paths around a defined service job, with explicit boundaries for what the agent may do.</p></article>
+    <article class="item reveal" data-c="agentforce"><h3>Knowledge-grounded responses</h3><p>Use approved Salesforce Knowledge and authorized case context for summaries and suggested replies, keeping source visibility available to the service agent.</p></article>
+    <article class="item reveal" data-c="agentforce"><h3>Responsible AI guardrails</h3><p>Apply permissions, clear confidence limits, agent approval, and safe handoff paths so unsupported or sensitive requests remain under human control.</p></article>
+
+    <article class="item reveal" data-c="deployment"><h3>Package-based delivery</h3><p>Use source-driven Salesforce projects and unlocked packages to version changes, track dependencies, and promote repeatable releases.</p></article>
+    <article class="item reveal" data-c="deployment"><h3>Change set releases</h3><p>Use change sets where org-based delivery fits, with dependency review, validation in the target org, and a deliberate post-deployment checklist.</p></article>
+    <article class="item reveal" data-c="deployment"><h3>CI/CD quality gates</h3><p>Automate validation and deployment with GitHub Actions, delta changes, PMD, ESLint, Jest, and post-deploy smoke checks.</p></article>
+
+    <article class="item reveal" data-c="tools"><h3>VS Code and Salesforce CLI</h3><p>Develop from source, authenticate to orgs, retrieve metadata, run tests, and deploy changes through the Salesforce extensions and CLI.</p></article>
+    <article class="item reveal" data-c="tools"><h3>Postman</h3><p>Exercise REST and OAuth flows, manage environment variables, and inspect request and response behavior during integration development.</p></article>
+    <article class="item reveal" data-c="tools"><h3>Data Loader</h3><p>Run repeatable bulk imports, exports, updates, and deletes with external IDs and validation checks for reliable data operations.</p></article>
+    <article class="item reveal" data-c="tools"><h3>Salesforce Inspector and Workbench</h3><p>Inspect records and metadata, run SOQL, and troubleshoot REST or SOAP requests during org development and support.</p></article>
+    <article class="item reveal" data-c="tools"><h3>Git, GitHub, and Jira</h3><p>Manage branches and reviews, track delivery work, and keep implementation history connected to releases.</p></article>
   </div>
 </section>
 
@@ -236,7 +251,7 @@ every panel in sync, no tight coupling</span></pre>
   <div class="head reveal"><h2>Experience</h2><p>Four years of delivery across two organizations, with growing ownership.</p></div>
   <div class="timeline">
     <article class="job reveal">
-      <div class="job-heading"><img class="organization-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEMdXtmOTzmNepn_bGtQ0yyQqb0qxrO-d9XIZSgMVy_Q&s=10" alt="ITCI logo"><div><h3>Salesforce Developer</h3><p class="meta">ITCI, Feb 2026 – Present</p></div></div>
+      <div class="job-heading"><img class="organization-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEMdXtmOTzmNepn_bGtQ0yyQqb0qxrO-d9XIZSgMVy_Q&s=10" alt="ITCI logo" loading="lazy" decoding="async"><div><h3>Salesforce Developer</h3><p class="meta">ITCI, Feb 2026 – Present</p></div></div>
       <ul>
         <li>Architect the Lightning Web Components service console and the Apex service and selector layers behind it.</li>
         <li>Own event-driven integrations built on Platform Events and Queueable chains with Finalizers and idempotent retries.</li>
@@ -244,7 +259,7 @@ every panel in sync, no tight coupling</span></pre>
       </ul>
     </article>
     <article class="job reveal">
-      <div class="job-heading"><img class="organization-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR71e-DLXY0M0629N2V_iIUfmJhEj9Z3XN7CSR3DioZxw&s=10" alt="LTM logo"><div><h3>Salesforce Developer</h3><p class="meta">LTM, Aug 2022 – Feb 2026</p></div></div>
+      <div class="job-heading"><img class="organization-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR71e-DLXY0M0629N2V_iIUfmJhEj9Z3XN7CSR3DioZxw&s=10" alt="LTM logo" loading="lazy" decoding="async"><div><h3>Salesforce Developer</h3><p class="meta">LTM, Aug 2022 – Feb 2026</p></div></div>
       <ul>
         <li>Delivered Sales Cloud and Service Cloud features from requirements to production, including lead-to-opportunity automation and case routing with entitlements.</li>
         <li>Built trigger frameworks and Batch and Queueable pipelines, and ran large data migrations with Bulk API.</li>
@@ -256,12 +271,12 @@ every panel in sync, no tight coupling</span></pre>
     <div class="head reveal"><h2>Where the learning began</h2><p>The foundation I continue building on.</p></div>
     <div class="education-grid">
       <article class="education-card reveal" style="--education-accent:#0b5fff">
-        <div class="education-mark"><img class="education-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS22Gn-DyUL3JdNJzuG8AYHhc0GdgP1IVbES8Z3WQk_7g&s=10" alt="Sri Ramakrishna College logo"></div>
-        <div><span class="education-type">Higher education</span><h3>Sri Ramakrishna College of Arts and Science</h3></div>
+        <div class="education-mark"><img class="education-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS22Gn-DyUL3JdNJzuG8AYHhc0GdgP1IVbES8Z3WQk_7g&s=10" alt="Sri Ramakrishna College logo" loading="lazy" decoding="async"></div>
+        <div><span class="education-type">Higher education</span><h3>Sri Ramakrishna College of Arts and Science</h3><ul class="education-points"><li>Academic foundation across arts and science</li><li>Developed analytical and problem-solving skills</li><li>Built communication and collaborative learning skills</li></ul></div>
       </article>
       <article class="education-card reveal" style="--education-accent:#f28c28">
-        <div class="education-mark"><img class="education-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq3v6ml-1-OIHB6iX3Md9cZYixvxkr0dOmriovqFcYg&s=10" alt="Saradha Vidhyalaya logo"></div>
-        <div><span class="education-type">School education</span><h3>Saradha Vidhyalaya Matriculation HSS</h3><p>SSC and HSC</p></div>
+        <div class="education-mark"><img class="education-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQq3v6ml-1-OIHB6iX3Md9cZYixvxkr0dOmriovqFcYg&s=10" alt="Saradha Vidhyalaya logo" loading="lazy" decoding="async"></div>
+        <div><span class="education-type">School education</span><h3>Saradha Vidhyalaya Matriculation HSS</h3><ul class="education-points"><li>Completed SSC and HSC</li><li>Built a foundation across core academic subjects</li><li>Developed steady study habits and time management</li></ul></div>
       </article>
     </div>
   </section>
@@ -269,12 +284,12 @@ every panel in sync, no tight coupling</span></pre>
 
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="wrap">
-  <div class="head reveal"><h2>Certifications</h2><p>Four Salesforce credentials across development, administration and AI.</p></div>
+  <div class="head reveal"><h2>Achievements</h2><p>Four Salesforce credentials across development, administration and AI.</p></div>
   <div class="certs reveal">
-    <article class="cert cert--developer" style="--i:1"><div class="cbadge"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRanl_4IchaNkRaOdX7bfYwOTFCBak7wHYvbc75mOW58g&s=10" alt="Platform Developer I certification"></div><span class="tag">Developer</span><h3>Salesforce Certified Platform Developer I</h3><p>Validates hands-on skills building custom business logic, data models, and user interfaces on the Salesforce platform.</p></article>
-    <article class="cert cert--admin" style="--i:2"><div class="cbadge"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_NRy4ge3SYnYjjZCmZnv2T9VQvCnqNUoNfGoMffxOOA&s=10" alt="Salesforce Administrator certification"></div><span class="tag">Administrator</span><h3>Salesforce Certified Platform Administrator</h3><p>Demonstrates core org configuration, user management, security, data management, and declarative automation.</p></article>
-    <article class="cert cert--ai-specialist" style="--i:3"><div class="cbadge"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb93KJ9SiESllY1EbmXp0fe5NfS5aGBYFWJGz9T-0blg&s=10" alt="Salesforce AI Specialist certification"></div><span class="tag">AI Specialist</span><h3>Salesforce Certified AI Specialist</h3><p>Focuses on applying Salesforce AI capabilities to business workflows with thoughtful prompt design and responsible use.</p></article>
-    <article class="cert cert--ai-associate" style="--i:4"><div class="cbadge"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnXVSLpA5NIaqkE1voIWk3sDaeT5mld2LmBd-4BJiBNA&s=10" alt="Salesforce AI Associate certification"></div><span class="tag">AI Associate</span><h3>Salesforce Certified AI Associate</h3><p>Introduces foundational AI concepts, practical business use cases, and responsible AI principles.</p></article>
+    <article class="cert cert--developer" style="--i:1"><div class="cbadge"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRanl_4IchaNkRaOdX7bfYwOTFCBak7wHYvbc75mOW58g&s=10" alt="Platform Developer I certification" loading="lazy" decoding="async"></div><span class="tag">Developer</span><h3>Salesforce Certified Platform Developer I</h3><p>Validates hands-on skills building custom business logic, data models, and user interfaces on the Salesforce platform.</p></article>
+    <article class="cert cert--admin" style="--i:2"><div class="cbadge"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_NRy4ge3SYnYjjZCmZnv2T9VQvCnqNUoNfGoMffxOOA&s=10" alt="Salesforce Administrator certification" loading="lazy" decoding="async"></div><span class="tag">Administrator</span><h3>Salesforce Certified Platform Administrator</h3><p>Demonstrates core org configuration, user management, security, data management, and declarative automation.</p></article>
+    <article class="cert cert--ai-specialist" style="--i:3"><div class="cbadge"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb93KJ9SiESllY1EbmXp0fe5NfS5aGBYFWJGz9T-0blg&s=10" alt="Salesforce AI Specialist certification" loading="lazy" decoding="async"></div><span class="tag">AI Specialist</span><h3>Salesforce Certified AI Specialist</h3><p>Focuses on applying Salesforce AI capabilities to business workflows with thoughtful prompt design and responsible use.</p></article>
+    <article class="cert cert--ai-associate" style="--i:4"><div class="cbadge"><img class="cert-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnXVSLpA5NIaqkE1voIWk3sDaeT5mld2LmBd-4BJiBNA&s=10" alt="Salesforce AI Associate certification" loading="lazy" decoding="async"></div><span class="tag">AI Associate</span><h3>Salesforce Certified AI Associate</h3><p>Introduces foundational AI concepts, practical business use cases, and responsible AI principles.</p></article>
   </div>
 </section>
 
@@ -284,12 +299,12 @@ every panel in sync, no tight coupling</span></pre>
     <div>
       <h2>Let's build something reliable</h2>
       <p class="lead">Open to Salesforce developer roles where Apex, Lightning Web Components and integrations matter.</p>
-      <p class="info"><img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn9XUDCcV8ckF5KnqCkvli7q_Gf3kFLVz1rWSe-KU9gw&s=10" alt="Email"><a href="mailto:sanju800m@gmail.com">sanju800m@gmail.com</a></p>
-      <p class="info"><img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe17WOV22fJWnWM_9GkMitnDBPnGsmE-O82e6KCOaVVA&s=10" alt="Phone"><a href="tel:+919080877235">9080877235</a></p>
-      <p class="info"><img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdT2G7FphGB5cZRvE6rTmwNGzWPYC4Zu651Z3MFJgCpQ&s=10" alt="Location"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bengaluru%2C%20Karnataka" target="_blank" rel="noopener">Bengaluru, Karnataka</a></p>
+      <p class="info"><img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn9XUDCcV8ckF5KnqCkvli7q_Gf3kFLVz1rWSe-KU9gw&s=10" alt="Email" loading="lazy" decoding="async"><a href="mailto:sanju800m@gmail.com">sanju800m@gmail.com</a></p>
+      <p class="info"><img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe17WOV22fJWnWM_9GkMitnDBPnGsmE-O82e6KCOaVVA&s=10" alt="Phone" loading="lazy" decoding="async"><a href="tel:+919080877235">9080877235</a></p>
+      <p class="info"><img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdT2G7FphGB5cZRvE6rTmwNGzWPYC4Zu651Z3MFJgCpQ&s=10" alt="Location" loading="lazy" decoding="async"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bengaluru%2C%20Karnataka" target="_blank" rel="noopener">Bengaluru, Karnataka</a></p>
       <p class="info"><svg class="ic"><use href="#i-linkedin"/></svg><a href="https://www.linkedin.com/in/sanju800m" target="_blank" rel="noopener">linkedin.com/in/sanju800m</a></p>
       <p class="info"><svg class="ic"><use href="#i-github"/></svg><a href="https://github.com/sanju800m" target="_blank" rel="noopener">github.com/sanju800m</a></p>
-      <p class="info"><img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiQusY_ipTStKD9rbZfheYKBAQKyvWYoNZPRINyh-Rgw&s=10" alt="Trailhead"><a href="https://www.salesforce.com/trailblazer/sanju800m" target="_blank" rel="noopener">Trailhead profile</a></p>
+      <p class="info"><img class="contact-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiQusY_ipTStKD9rbZfheYKBAQKyvWYoNZPRINyh-Rgw&s=10" alt="Trailhead" loading="lazy" decoding="async"><a href="https://www.salesforce.com/trailblazer/sanju800m" target="_blank" rel="noopener">Trailhead profile</a></p>
       <div class="cv">
         <a class="btn" href="https://drive.google.com/uc?export=download&id=1sYRg2X0xUCif07yyHh4QHUMcoFAN8HGz" target="_blank" rel="noopener">Download CV</a>
         <a class="btn ghost" href="https://drive.google.com/file/d/1sYRg2X0xUCif07yyHh4QHUMcoFAN8HGz/view?usp=drivesdk" target="_blank" rel="noopener">View online</a>
