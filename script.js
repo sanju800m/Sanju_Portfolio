@@ -4,8 +4,9 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const root = document.documentElement;
-  let revealElements = [];
-  let revealCheckPending = false;
+  const revealObserver = new IntersectionObserver((entries) => entries.forEach(({ target, isIntersecting }) => {
+    target.classList.toggle('in', isIntersecting);
+  }), { rootMargin: '-10% 0px -10% 0px' });
 
   /* Light / dark theme */
   const tbtn = $('#theme');
@@ -27,7 +28,6 @@
     const h = document.documentElement;
     bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight || 1)})`;
     nav.classList.toggle('stuck', h.scrollTop > 10);
-    scheduleRevealCheck();
   };
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
@@ -44,6 +44,7 @@
       else diagram.unpauseAnimations();
     });
     if (motionPreference.matches) {
+      revealObserver.disconnect();
       root.classList.remove('animations-ready');
       $$('.reveal').forEach((element) => {
         element.classList.add('in');
@@ -55,40 +56,20 @@
   }
 
   function startSectionAnimations() {
-    revealElements = $$('.reveal');
+    const revealElements = $$('.reveal');
+    revealObserver.disconnect();
     if (motionPreference.matches || document.hidden) {
       root.classList.remove('animations-ready');
       $$('.reveal').forEach((element) => element.classList.add('in'));
       return;
     }
     root.classList.add('animations-ready');
-    updateReveals();
+    revealElements.forEach((element) => revealObserver.observe(element));
   }
-
-  function updateReveals() {
-    if (!root.classList.contains('animations-ready')) return;
-    const viewportHeight = window.innerHeight;
-    const viewportWidth = window.innerWidth;
-    revealElements.forEach((element) => {
-      const bounds = element.getBoundingClientRect();
-      const visible = bounds.top < viewportHeight * 0.9 && bounds.bottom > viewportHeight * 0.1 &&
-        bounds.left < viewportWidth && bounds.right > 0;
-      element.classList.toggle('in', visible);
-    });
-  }
-
-  function scheduleRevealCheck() {
-    if (!root.classList.contains('animations-ready') || revealCheckPending) return;
-    revealCheckPending = true;
-    requestAnimationFrame(() => {
-      revealCheckPending = false;
-      updateReveals();
-    });
-  }
-  addEventListener('resize', scheduleRevealCheck, { passive: true });
   motionPreference.addEventListener('change', applyMotionPreference);
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
+      revealObserver.disconnect();
       root.classList.remove('animations-ready');
       $$('.reveal').forEach((element) => element.classList.add('in'));
       return;
